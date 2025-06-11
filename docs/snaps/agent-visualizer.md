@@ -4,7 +4,7 @@ The Agent Visualizer Snap is a Utility Snap for SnapLogic AI Agents.
 It provides a comprehensive dual-view interface combining an interactive diagram and a detailed step-by-step log.
 This dual visualization approach enables users to trace and analyze agent behavior precisely, offering enhanced transparency into complex AI agent operations and making it easier to understand how agents process and respond to user requests.
 
-![Agent Visuzlier screenshot](/img/agent_visualizer.png){ align=left }
+![Agent Visuzlier screenshot](../img/agent_visualizer.png){ align=left }
 
 ## Prerequisites
 
