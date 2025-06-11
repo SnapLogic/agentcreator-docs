@@ -1,0 +1,19 @@
+site_name: SnapLogic AgentCreator Experimental Docs
+theme:
+  logo: assets/logo.svg
+  name: material
+  palette:
+    primary: custom
+  features:
+    - navigation.expand
+    - navigation.indexes
+extra_css:
+  - stylesheets/extras.css
+repo_url: https://github.com/SnapLogic/agentcreator-docs
+repo_name: SnapLogic/agentcreator-docs
+nav:
+  - Home:
+    - index.md
+  - Snaps:
+    - snaps/index.md
+    - Agent Visualizer: snaps/agent-visualizer.md
