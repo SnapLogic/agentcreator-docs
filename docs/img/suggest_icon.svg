@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #7f7f7f;
+      }
+
+      .cls-2 {
+        fill: none;
+      }
+    </style>
+  </defs>
+  <title>suggest_1</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Meat">
+      <path class="cls-1" d="M8,3C4.13,3,1,5,1,7.5,1,8.94,2.06,10.22,3.7,11L3,14l3.68-2.08A10.82,10.82,0,0,0,8,12c3.87,0,7-2,7-4.5S11.87,3,8,3Z"/>
+      <rect class="cls-2" width="16" height="16"/>
+    </g>
+  </g>
+</svg>
