@@ -9,4 +9,8 @@ The following Snaps are currently included in the AgentCreator Experimental (Bet
 
 ### [Agent Visualizer](agent-visualizer.md)
 
+## Deprecated Snaps
+
+No Snaps have been deprecated at this time.
+
 ### [Snap Pack Release History](snap-pack-history.md)

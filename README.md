@@ -24,20 +24,14 @@ You're going to need:
 ```shell
 # with python (and a virtual environment with mkdocs and all requirements installed) you can serve the contents from the root folder by running
 mkdocs serve
-
-# With docker, to build for deploying, run the following (from the root of this repository)
-docker run --rm --name slate -v $(pwd)/build:/srv/slate/build -v $(pwd)/source:/srv/slate/source slatedocs/slate:latest build
 ```
 
-You can now see the docs at http://localhost:4567. Whoa! That was fast!
+You can now see the docs at http://localhost:8080 and they live-update based on changes made
 
 ### Deploying
-If running via docker locally, follow these steps:
-* `git commit -a -m "Commit message"`
-* `git push`
-* `docker run --rm --name slate -v $(pwd)/build:/srv/slate/build -v $(pwd)/source:/srv/slate/source slatedocs/slate:latest build`
-* `./deploy.sh --push-only`
-
-Learn more about [editing Slate markdown](https://github.com/lord/slate/wiki/Markdown-Syntax).
-
-Further instructions are available [in the Slate wiki](https://github.com/lord/slate/wiki/Docker).
+If you need to manually deploy the docs, you can (with the same setup to see above) simply run the following.
+```shell
+# with python (and virtual environment with mkdocs and all requirements installed) you can deploy the contents from the root folder by running
+mkdocs gh-deploy
+```
+A GitHub action will automatically deploy this to the repo already, so there shouldn't be a need to deploy manually once the items are merged to the `main` branch.
