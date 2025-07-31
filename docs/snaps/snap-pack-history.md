@@ -28,4 +28,19 @@
             </ul>
         </td>
     </tr>
+    <tr>
+        <td>August 2025<br/>August 12, 2025</td>
+        <td><pre></pre></td>
+        <td>Stable</td>
+        <td>
+            <ul>
+                <li>Initial Release of MCP Snaps and Account</li>
+                <ul>
+                    <li>MCP Function Generator</li>
+                    <li>MCP Invoke</li>
+                    <li>MCP SSE Account</li>
+                </ul>
+            </ul>
+        </td>
+    </tr>
 </table>
