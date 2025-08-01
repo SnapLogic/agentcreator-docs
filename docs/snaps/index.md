@@ -8,6 +8,9 @@ Rather than in the SnapLogic SnapLabs environments where there is a need to migr
 The following Snaps are currently included in the AgentCreator Experimental (Beta) Snap Pack
 
 ### [Agent Visualizer](agent-visualizer.md)
+### [MCP Function Generator](mcp-function-generator.md)
+### [MCP Invoke](mcp-invoke.md)
+### [MCP SSE Account](mcp-sse-account.md)
 
 ## Deprecated Snaps
 
