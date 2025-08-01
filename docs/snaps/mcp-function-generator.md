@@ -1,14 +1,12 @@
 # MCP Function Generator
 
-The Agent Visualizer Snap is a Utility Snap for SnapLogic AI Agents.
-It provides a comprehensive dual-view interface combining an interactive diagram and a detailed step-by-step log.
-This dual visualization approach enables users to trace and analyze agent behavior precisely, offering enhanced transparency into complex AI agent operations and making it easier to understand how agents process and respond to user requests.
+The MCP Function Generator Snap is a Snap to convert the tools available from an MCP server to a list of function definitions, with the additional ability to add "list resource" and "read resource" to the function definitions list.
 
 ![MCP Function Generator screenshot](../img/mcp-function-generator.png){ align=left }
 
 ## Prerequisites
 
-* Existing Agentic Pipeline which has the full message log for the Agent
+* A valid <a href="https://snaplogic.github.io/agentcreator-docs/snaps/mcp-sse-account/ ">MCP SSE Account</a> with required fields provided.
 
 ## Snap views
 <table>
@@ -19,17 +17,19 @@ This dual visualization approach enables users to trace and analyze agent behavi
     </tr>
     <tr>
         <td>Input</td>
-        <td>This Snap has exactly one document input view. The Snap requires an input document to have an Agent message list as part of the input document schema for it to be visualized by the Agent Visualizer UI.</td>
-        <td><a href="https://docs-snaplogic.atlassian.net/wiki/x/LICfzg">PipeLoop</a></td>
+        <td>The Snap supports a maximum of one document input view.</td>
+        <td><ul><li><a href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1438286/Mapper">Mapper</a></li></ul></td>
     </tr>
     <tr>
         <td>Output</td>
-        <td>This Snap supports exactly two document output views.<br/><ul><li>The First view is a passthrough of the input document for further processing downstream</li><li>The second output view is the actual agent visualizer log that is being visualized</li></ul></td>
-        <td><a href="https://docs-snaplogic.atlassian.net/wiki/x/UfIV">JSON Formatter</a></td>
+        <td>The output contains a list (array) of tools or functions. Each item describes one function that can be used.
+
+The output schema includes a set of MCP functions, each with metadata (the MCP operation to perform) and a structured definition of what input parameters they expect.</td>
+        <td><ul><li><a href="https://docs.snaplogic.com/snaps/snaps-machine-learning/sp-openai-llm/snap-openai-tool-calling.html">OpenAI Tool Calling</a></li><li><a href="https://docs.snaplogic.com/snaps/snaps-machine-learning/sp-azure-openai-llm/snap-azure-openai-tool-calling.html">Azure OpenAI Tool Calling</a></li><li><a href="https://docs.snaplogic.com/snaps/snaps-machine-learning/sp-google-genai-llm/snap-gg-apc.html">Google Gemini API Tool Calling</a></li><li><a href="https://docs.snaplogic.com/snaps/snaps-machine-learning/sp-amazon-bedrock-llm/snap-ab-capi-tool-calling.html">Amazon Bedrock Converse API Tool Calling</a></li></ul></td>
     </tr>
     <tr>
         <td>Error</td>
-        <td colspan="2">Error handling is a generic way to handle errors without losing data or failing the Snap execution. You can handle the errors that the Snap might encounter when running the pipeline by choosing on eof the following options from the When errors occur list under the Views tab. The available options are:<ul><li>Stop Pipeline Execution Stops the current pipeline execution when an error occurs.</li><li>Discard Error Data and Continue Ignores the error, discards that record, and continues with the remaining records.</li><li>Route Error Data to Error View Routes the error data to an error view without stopping the Snap execution.</li></ul>Learn more about <a href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/81526859">Error handling in Pipelines</a>.</td>
+        <td colspan="2">Error handling is a generic way to handle errors without losing data or failing the Snap execution. You can handle the errors that the Snap might encounter when running the pipeline by choosing one of the following options from the When errors occur list under the Views tab. The available options are:<ul><li>Stop Pipeline Execution Stops the current pipeline execution when an error occurs.</li><li>Discard Error Data and Continue Ignores the error, discards that record, and continues with the remaining records.</li><li>Route Error Data to Error View Routes the error data to an error view without stopping the Snap execution.</li></ul>Learn more about <a href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/81526859">Error handling in Pipelines</a>.</td>
     </tr>
 </table>
 
@@ -44,6 +44,6 @@ This dual visualization approach enables users to trace and analyze agent behavi
 
 | Field / Field set | Type | Description |
 | ----------------- | ---- | ----------- |
-| Label | String | Required. Specify a unique name for the Snap. Modify this to be more appropriate, esepcially if more than one of the same Snaps is in the pipeline.<br/>Default value: Agent Visualizer<br/>Example: Jira Agent Visualization |
-| Log content | String/Expression | Required. Specify the log message data from the upstream document<br/>Default value: `$messages` |
-| Visualize | Button | Click to launch the Agent Visualizer UI. |
+| Label | String | Required. Specify a unique name for the Snap. Modify this to be more appropriate, esepcially if more than one of the same Snaps is in the pipeline.<br/>Default value: MCP Function Generator<br/>Example: Firecrawl tools |
+| Expose Tools | Boolean | Select to include tools available from an MCP server to be converted into a list function definitions.<br/>Default status: Selected |
+| Expose Resources | Boolean | Select to include two predefined tools: "read_resource" and "list_resources" into the list of function definitions, to enable the LLM to list available resources and read the resources.<br/>Default status: Deselected |

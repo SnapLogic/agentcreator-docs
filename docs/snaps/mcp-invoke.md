@@ -1,14 +1,12 @@
 # MCP Invoke
 
-The Agent Visualizer Snap is a Utility Snap for SnapLogic AI Agents.
-It provides a comprehensive dual-view interface combining an interactive diagram and a detailed step-by-step log.
-This dual visualization approach enables users to trace and analyze agent behavior precisely, offering enhanced transparency into complex AI agent operations and making it easier to understand how agents process and respond to user requests.
+The MCP Invoke Snap is a Snap to perform operations such as calling a tool, listing resources, and reading resources to get results on an MCP server.
 
 ![MCP Invoke screenshot](../img/mcp-invoke.png){ align=left }
 
 ## Prerequisites
 
-* Existing Agentic Pipeline which has the full message log for the Agent
+* A valid <a href="https://snaplogic.github.io/agentcreator-docs/snaps/mcp-sse-account/ ">MCP SSE Account</a> with required fields provided.
 
 ## Snap views
 <table>
@@ -19,13 +17,13 @@ This dual visualization approach enables users to trace and analyze agent behavi
     </tr>
     <tr>
         <td>Input</td>
-        <td>This Snap has exactly one document input view. The Snap requires an input document to have an Agent message list as part of the input document schema for it to be visualized by the Agent Visualizer UI.</td>
-        <td><a href="https://docs-snaplogic.atlassian.net/wiki/x/LICfzg">PipeLoop</a></td>
+        <td>The Snap supports a maximum of one document input view.</td>
+        <td><ul><li><a href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1438286/Mapper">Mapper</a></li></ul></td>
     </tr>
     <tr>
         <td>Output</td>
         <td>This Snap supports exactly two document output views.<br/><ul><li>The First view is a passthrough of the input document for further processing downstream</li><li>The second output view is the actual agent visualizer log that is being visualized</li></ul></td>
-        <td><a href="https://docs-snaplogic.atlassian.net/wiki/x/UfIV">JSON Formatter</a></td>
+         <td><ul><li><a href="https://docs.snaplogic.com/snaps/snaps-machine-learning/sp-openai-llm/snap-openai-function-result-generator.html">OpenAI Function Result Generator</a></li><li><a href="https://docs.snaplogic.com/snaps/snaps-machine-learning/sp-azure-openai-llm/snap-azure-openai-function-result-generator.html">Azure OpenAI Function Result Generator</a></li><li><a href="https://docs.snaplogic.com/snaps/snaps-machine-learning/sp-google-genai-llm/snap-gg-frg.html">Google GenAI Function Result Generator</a></li><li><a href="https://docs.snaplogic.com/snaps/snaps-machine-learning/sp-amazon-bedrock-llm/snap-ab-capi-function-result-generator.html">Amazon Bedrock Function Result Generator</a></li></ul></td>
     </tr>
     <tr>
         <td>Error</td>
@@ -44,6 +42,7 @@ This dual visualization approach enables users to trace and analyze agent behavi
 
 | Field / Field set | Type | Description |
 | ----------------- | ---- | ----------- |
-| Label | String | Required. Specify a unique name for the Snap. Modify this to be more appropriate, esepcially if more than one of the same Snaps is in the pipeline.<br/>Default value: Agent Visualizer<br/>Example: Jira Agent Visualization |
-| Log content | String/Expression | Required. Specify the log message data from the upstream document<br/>Default value: `$messages` |
-| Visualize | Button | Click to launch the Agent Visualizer UI. |
+| Label | String | Required. Specify a unique name for the Snap. Modify this to be more appropriate, esepcially if more than one of the same Snaps is in the pipeline.<br/>Default value: MCP Invoke<br/>Example: Firecrawl MCP Server |
+| Operation | String/Expression | Required. Specify the operation to perform for the current input. Operation can be one of `tools/call`, `resources/read`, or `resources/list`. The operation is provided within the `sl_metadata` if used with the <a href="https://snaplogic.github.io/agentcreator-docs/snaps/mcp-function-generator/">MCP Function Generator</a> Snap.<br/>Default value: `tools/call` |
+| Tool Name | String/Expression | The name of the tool to be called. Enabled if the "Operation" is `tools/call` or is an expression.<br/>Example: `$function.name` |
+| Parameters | String/Expression | The "tool call" or "read resource" parameters to be used for the operation. Enabled if the "Operation" is `tools/call`, `resources/read`, or is an expression.<br/> Example: `$function.json_arguments` |
