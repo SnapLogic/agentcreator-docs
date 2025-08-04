@@ -1,8 +1,8 @@
 # MCP SSE Account
 
-Use this account type to connect the MCP Client Snaps to a remote MCP SSE Server.
+Use this account type to connect the MCP Client Snaps to a remote MCP SSE Server. 
 
-![MCP SSE Account screenshot](../img/mcp-sse-account.png){ align=left }
+![MCP SSE Account screenshot](../img/mcp-sse-account.png){ align=middle }
 
 ## Prerequisites
 
