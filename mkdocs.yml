@@ -26,4 +26,7 @@ nav:
   - Snaps:
     - snaps/index.md
     - Agent Visualizer: snaps/agent-visualizer.md
+    - MCP Function Generator: snaps/mcp-function-generator.md
+    - MCP Invoke: snaps/mcp-invoke.md
+    - MCP SSE Account: snaps/mcp-sse-account.md
     - Snap Pack History: snaps/snap-pack-history.md
