@@ -10,6 +10,7 @@ The following Snaps are currently included in the AgentCreator Experimental (Bet
 ### [Agent Visualizer](agent-visualizer.md)
 ### [MCP Function Generator](mcp-function-generator.md)
 ### [MCP Invoke](mcp-invoke.md)
+### [MCP Server Router](mcp-server-router.md)
 ### [MCP SSE Account](mcp-sse-account.md)
 
 ## Deprecated Snaps
