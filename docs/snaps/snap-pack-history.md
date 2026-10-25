@@ -23,8 +23,8 @@
         <td>Latest</td>
         <td>
             <ul>
-                <li>Updated Agent Visualizer to be Ultra-Compatible (only one output view may end up opened for resposne)</li>
-                <li>Updated doc link for Agent Visuzlier Snap</li>
+                <li>Updated Agent Visualizer to be Ultra-Compatible (only one output view may end up opened for response)</li>
+                <li>Updated doc link for Agent Visualizer Snap</li>
             </ul>
         </td>
     </tr>

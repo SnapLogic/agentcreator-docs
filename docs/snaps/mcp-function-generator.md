@@ -37,13 +37,13 @@ The output schema includes a set of MCP functions, each with metadata (the MCP o
 
 !!! example "Legend:"
 
-    * Expression icon(![Expression Toggle](../img/expression_toggle.svg){: style="height:16px"}): Allows using JavaScript syntax to access SnapLogic Expressions to set field values dynamicall (if enabled). If disabled, you can provide a static value. [Learn more](https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1438042/Understanding+Expressions+in+SnapLogic).
+    * Expression icon(![Expression Toggle](../img/expression_toggle.svg){: style="height:16px"}): Allows using JavaScript syntax to access SnapLogic Expressions to set field values dynamically (if enabled). If disabled, you can provide a static value. [Learn more](https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1438042/Understanding+Expressions+in+SnapLogic).
     * SnapGPT (![SnapGPT Icon](../img/snapgpt_logo.svg){: style="height:16px"}): Generates SnapLogic Expressions based on natural language using SnapGPT. [Learn more](https://d14w8g1erguuat.cloudfront.net/rvw-jb-stage-202506-draft1/snapgpt/snapgpt-generate-expressions-mapper-snap.html).
     * Suggestion icon (![Suggest Icon](../img/suggest_icon.svg){: style="height:16px"}): Populates a list of values dynamically based on your Snap configuration. You can select only one attribute at a time using the icon. Type into the field if it supports a comma-separated list of values.
     * Upload (![Upload Icon](../img/upload_icon.webp){: style="height:16px"}): Uploads files. [Learn more](https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1439404).
 
 | Field / Field set | Type | Description |
 | ----------------- | ---- | ----------- |
-| Label | String | Required. Specify a unique name for the Snap. Modify this to be more appropriate, esepcially if more than one of the same Snaps is in the pipeline.<br/>Default value: MCP Function Generator<br/>Example: Firecrawl tools |
-| Expose Tools | Boolean | Select to include tools available from an MCP server to be converted into a list function definitions.<br/>Default status: Selected |
+| Label | String | Required. Specify a unique name for the Snap. Modify this to be more appropriate, especially if more than one of the same Snaps is in the pipeline.<br/>Default value: MCP Function Generator<br/>Example: Firecrawl tools |
+| Expose Tools | Boolean | Select to include tools available from an MCP server to be converted into a list of function definitions.<br/>Default status: Selected |
 | Expose Resources | Boolean | Select to include two predefined tools: "read_resource" and "list_resources" into the list of function definitions, to enable the LLM to list available resources and read the resources.<br/>Default status: Deselected |
